@@ -1,6 +1,6 @@
 {
-    "name": "newapp",
-    "short_name": "newapp",
+    "name": "cgwallet",
+    "short_name": "cgwallet",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
