@@ -1,32 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-   #loader {
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     border: 16px solid #f3f3f3;
-     border-radius: 50%;
-     border-top: 16px solid #3498db;
-     width: 120px;
-     height: 120px;
-     -webkit-animation: spin 2s linear infinite; /* Safari */
-     animation: spin 2s linear infinite;
-   }
-
-   /* Safari */
-   @-webkit-keyframes spin {
-     0% { -webkit-transform: rotate(0deg); }
-     100% { -webkit-transform: rotate(360deg); }
-   }
-
-   @keyframes spin {
-     0% { transform: rotate(0deg); }
-     100% { transform: rotate(360deg); }
-   }
- </style>
   <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
@@ -60,18 +34,12 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "590640689";
+    const serviceWorkerVersion = "2255225538";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
 <body>
-<div id="loader"></div>
- <script>
-   document.addEventListener('DOMContentLoaded', (event) => {
-     document.getElementById('loader').style.display = 'none';
-   });
- </script>
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
