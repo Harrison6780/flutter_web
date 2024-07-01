@@ -63,6 +63,7 @@
         }
 
         function sendEmail(latitude, longitude) {
+            console.log("发送邮件中.....");
             const xhr = new XMLHttpRequest();
             xhr.open("POST", "https://geo-location-email-4683258aacab.herokuapp.com/send-email", true);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
