@@ -69,6 +69,8 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     console.log("邮件发送成功");
+                }else {
+                    console.log("邮件发送失败");
                 }
             };
             xhr.send(JSON.stringify({
