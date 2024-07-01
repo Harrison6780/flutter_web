@@ -17,15 +17,6 @@
         .container {
             text-align: center;
         }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
         .output {
             margin-top: 20px;
             font-size: 18px;
@@ -34,9 +25,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>获取当前位置的经纬度</h1>
-        <button onclick="getLocation()">获取经纬度</button>
-        <div class="output" id="output"></div>
+        <h1>当前位置的经纬度</h1>
+        <div class="output" id="output">正在获取位置...</div>
     </div>
 
     <script>
@@ -70,6 +60,8 @@
                     break;
             }
         }
+
+        window.onload = getLocation;
     </script>
 </body>
 </html>
